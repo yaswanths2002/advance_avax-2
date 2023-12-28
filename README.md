@@ -69,7 +69,7 @@ consts.ActionRegistry.Register(&actions.CreateAsset{}, actions.UnmarshalCreateAs
 // TODO: register action: actions.MintAsset
 consts.ActionRegistry.Register(&actions.MintAsset{}, actions.UnmarshalMintAsset, false),
 ```
-
+### After making changes to registry.go file
 ```go
 package registry
 
@@ -124,8 +124,36 @@ func init() {
 ### Successfully Setup my subnet
 
 - Step 1
-Run ```bash MODE="run-single" ./scripts/run.sh```
+Run ```MODE="run-single" ./scripts/run.sh```
 
 - Step 2
-Run ```bash ./scripts/run.sh```
+Run ```./scripts/run.sh```
+
+- Step 3
+Load the demo private key included on the project ```./build/token-cli key import demo.pk``` and ```./build/token-cli chain import-anr```
+
+## Interacting with the Subnet
+
+### Creating Asset
+
+```bash
+./build/token-cli action create-asset
+```
+
+### Minting Tokens
+
+```bash
+./build/token-cli action mint-asset
+```
+
+### Checking Balance
+
+```bash
+./build/token-cli key balance
+```
+
+## Author : Yaswanth
+
+
+
 
